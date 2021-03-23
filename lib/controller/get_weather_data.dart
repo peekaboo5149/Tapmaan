@@ -1,3 +1,4 @@
+import 'package:flutter_config/flutter_config.dart';
 import 'package:tapmaan/controller/location.dart';
 
 import 'networking.dart';
@@ -6,7 +7,7 @@ class GetWeatherData {
   bool isFromSearch;
   String city;
   GetWeatherData(this.isFromSearch, [this.city]);
-  String apiKey = '9a33f4599c76434ab8e3a439104893fb';
+  String apiKey = FlutterConfig.get('API_KEY').toString();
   String openWeatherUrl = 'http://api.weatherbit.io/v2.0/current';
 
   getLocationData() async {
